@@ -2,14 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using SQLite;
 
 namespace shop
 {
     public class Item
     {
-        public int Id;
-        public int Category_id;
-        public int Price;
-        public string Description;
+        private int Category_Id;
+
+        [PrimaryKey, AutoIncrement]
+        public int Id { get; set; }
+        public int Price { get; set; }
+        public string Description { get; set; }
     }
 }

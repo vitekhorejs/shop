@@ -2,19 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using SQLite;
 
 namespace shop
 {
     public class Order
     {
-        public int Id;
-        public string Name;
-        public int User_id;
-        public List<Item> Items;
+        public int Price;
 
-        public void Price()
-        {
-            throw new System.NotImplementedException();
-        }
+        [PrimaryKey, AutoIncrement]
+        public int Id { get; set; }
+        public string Name { get; set; }
     }
 }
