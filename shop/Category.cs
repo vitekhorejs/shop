@@ -5,11 +5,9 @@ using System.Text;
 
 namespace shop
 {
-    public class Item
+    public class Category
     {
         public int Id;
-        public int Category_id;
-        public int Price;
-        public string Description;
+        public string Name;
     }
 }
