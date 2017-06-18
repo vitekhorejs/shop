@@ -17,5 +17,6 @@ namespace shop
         public string Password { get; set; }
         public string Mail { get; set; }
         public List<Order> Orders { get; set; }
+        public object salt { get; set; }
     }
 }

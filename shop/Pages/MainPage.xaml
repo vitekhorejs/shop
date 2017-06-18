@@ -19,9 +19,18 @@
         <!-- https://marvelapp.com/project/1910449/    https://projects.invisionapp.com/d/signup   https://wpftutorial.net/WrapPanel.html   https://wpf.2000things.com/2014/02/25/1016-displaying-a-collection-of-items-in-a-wrappanel/   http://stackoverflow.com/questions/17979106/can-use-a-wrappanel-with-datatemplate-for-horizontal-alignment-of-items-in-a-lis -->
         <Rectangle Fill="#FF31648F" IsHitTestVisible="False" Grid.Column="0" Grid.Row="0"/>
         <!-- <Label Grid.Column="0" Grid.Row="0" Content="Přihlásit" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,65,0"></Label>-->
-        <Button Grid.Column="0" Grid.Row="0" Content="Přihlásit" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,65,0" Background="Transparent" BorderThickness="0" ></Button>
-        <Label Grid.Column="0" Grid.Row="0" Content="Registrovat" HorizontalAlignment="Right" VerticalAlignment="Bottom"></Label>
-        <Label Grid.Column="0" Grid.Row="0" Content="Superkomp.cz" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="22" FontWeight="Bold" Background="#00000000" Foreground="#FFDEDEDE" Margin="25,0,0,0"></Label>
+        <Grid x:Name="LoginPanel" Margin="472,0,0,0">
+            <Button Grid.Column="0" Grid.Row="0" Content="Přihlásit" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,70,0" Padding="5,5,5,5" Background="Transparent" BorderThickness="0" ></Button>
+        <Button Grid.Column="0" Grid.Row="0" Content="Registrovat" Click="Register_Button" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,0,0" Padding="5,5,5,5" Background="Transparent" BorderThickness="0" ></Button>
+        </Grid>
+
+        <Grid x:Name="UserPanel" Margin="472,0,0,0" Visibility="Hidden">
+            <Label x:Name="USER" Grid.Column="0" Grid.Row="0" Content=""  HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,65,0"></Label>
+        </Grid>
+
+        <TextBlock Grid.Column="0" Grid.Row="0"  HorizontalAlignment="Left" VerticalAlignment="Center"   Margin="25,0,0,0">
+            <Hyperlink NavigateUri="MainPage.xaml" FontSize="22" FontWeight="Bold" Background="#00000000" Foreground="#FFDEDEDE" TextDecorations="None" >Superkomp.cz </Hyperlink>
+        </TextBlock>
         <!--<StackPanel Grid.Column="0" Grid.Row="1">
             <TextBox Text="Hledat..."></TextBox>
             <WrapPanel >
