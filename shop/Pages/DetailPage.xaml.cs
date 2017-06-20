@@ -99,7 +99,7 @@ namespace shop
         {
             CartItem cartitem = new CartItem();
             cartitem.ID_Item = item.Id;
-            cartitem.ID_Cart = Logged.logged_user.Id;
+            cartitem.ID_Cart = Logged.logged_user.ID_Cart;
             Database.SaveItemAsync(cartitem);
         }
 

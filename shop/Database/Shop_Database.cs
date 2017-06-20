@@ -17,12 +17,25 @@ namespace shop
             database.CreateTableAsync<User>().Wait();
             database.CreateTableAsync<Category>().Wait();
             database.CreateTableAsync<Item>().Wait();
-            database.CreateTableAsync<Order>().Wait();
             database.CreateTableAsync<CartItem>().Wait();
+            database.CreateTableAsync<Order>().Wait();
+            database.CreateTableAsync<Cart>().Wait();
+
 
         }
 
         public Task<int> SaveUserAsync(User item)
+        {
+            if (item.Id != 0)
+            {
+                return database.UpdateAsync(item);
+            }
+            else
+            {
+                return database.InsertAsync(item);
+            }
+        }
+        public Task<int> SaveItemAsync(Cart item)
         {
             if (item.Id != 0)
             {
@@ -87,9 +100,14 @@ namespace shop
             return database.Table<Item>().Where(i => i.Id == Id).FirstOrDefaultAsync();
         }
 
-        /*public Task<List<CartItem>> GetItemsToCartByMail(string Mail)
+        public Task<List<CartItem>> GetItemsToCartById_Cart(int Id)
         {
-            return database.Table<CartItem>().Where(i => i.Mail == Mail).ToListAsync();
-        }*/
+            return database.Table<CartItem>().Where(i => i.ID_Cart == Id).ToListAsync();
+        }
+
+        public Task<Item> GetI(int Id)
+        {
+            return database.Table<Item>().Where(i => i.Id == Id).FirstOrDefaultAsync();
+        }
     }
 }

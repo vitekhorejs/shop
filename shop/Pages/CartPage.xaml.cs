@@ -43,13 +43,18 @@ namespace shop
 
         private void ItemsToListView()
         {
+            var itemsFromDb = Database.GetItemsToCartById_Cart(Logged.logged_user.ID_Cart).Result;
+
+
             //var itemsFromDb = Database.GetItemsToCartByMail(Logged.logged_user.Mail).Result;
-            /*itemsFromDb.
-            List<Item> itemy = new List<Item>(); 
-            foreach (int cislo in itemsFromDb)
+            //itemsFromDb.
+            List<Item> itemy = new List<Item>();
+            foreach (CartItem catitem in itemsFromDb)
             {
-                Database.GetItemsById()
-            }*/
+                var vysledkyy = Database.GetItemByCard_ID(Logged.logged_user.ID_Cart).Result;
+                itemy.Add(vysledkyy);
+            }
+            listview.ItemsSource = itemy;
             //listview.ItemsSource = itemsFromDb;
         }
 

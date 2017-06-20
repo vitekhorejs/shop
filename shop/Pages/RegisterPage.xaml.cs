@@ -109,13 +109,21 @@ namespace shop
                 var hash = pbkdf2.GetBytes(16); // Get 16 bytes for the hash
                 //MessageBox.Show(Convert.ToBase64String(hash) + Convert.ToBase64String(salt) + Password.Password, "Upozornění", MessageBoxButton.OK, MessageBoxImage.Warning);
                 //MessageBox.Show(salt.ToString(), "Upozornění", MessageBoxButton.OK, MessageBoxImage.Warning);
+                Cart kosik = new Cart();
+
+                Database.SaveItemAsync(kosik);
+
                 User uzivatel = new User();
                 uzivatel.Mail = Mail.Text;
                 uzivatel.Name = Name.Text;
                 uzivatel.Surname = Surname.Text;
                 uzivatel.Password = hash;
                 uzivatel.salt = salt;
+                uzivatel.ID_Cart = kosik.Id;
                 Database.SaveUserAsync(uzivatel);
+
+
+                //kosik.ID_User = uzivatel.Id;
                 MessageBox.Show("Uživatel "+Name.Text+" "+Surname.Text+" je zaregistrovaný, nyní se přihlašte.", "Info", MessageBoxButton.OK, MessageBoxImage.Information);
                 this.NavigationService.Navigate(new MainPage());
             }

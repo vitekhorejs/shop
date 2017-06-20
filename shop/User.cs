@@ -16,6 +16,7 @@ namespace shop
         public string Surname { get; set; }
         public byte[] Password { get; set; }
         public string Mail { get; set; }
+        public int ID_Cart { get; set; }
         //public List<Order> Orders { get; set; }
         public byte[] salt { get; set; }
     }

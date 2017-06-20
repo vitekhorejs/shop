@@ -9,7 +9,7 @@ namespace shop
 {
     public class CartItem
     {
-        [PrimaryKey, AutoIncrement]
+        [AutoIncrement, PrimaryKey]
         public int Id { get; set; }
         public int ID_Cart { get; set; }
         public int ID_Item { get; set; }
