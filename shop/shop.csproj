@@ -79,10 +79,11 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Cart.cs" />
-    <Compile Include="CasrtInstructor.cs" />
+    <Compile Include="CartItem.cs" />
     <Compile Include="Category.cs" />
     <Compile Include="Database\FileHelper.cs" />
     <Compile Include="Item.cs" />
+    <Compile Include="Logged.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="OrderItem.cs" />
     <Compile Include="Pages\LoginPage.xaml.cs">
@@ -189,7 +190,45 @@
   <ItemGroup>
     <Resource Include="snapcode.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\procesor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\grafika.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\deska.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ram.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\disk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ssd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\zdroj.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\dvd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\skrin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\i7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ryzen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\r9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\titan_xp.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\SQLitePCLRaw.lib.e_sqlite3.linux.1.1.5\build\net35\SQLitePCLRaw.lib.e_sqlite3.linux.targets" Condition="Exists('..\packages\SQLitePCLRaw.lib.e_sqlite3.linux.1.1.5\build\net35\SQLitePCLRaw.lib.e_sqlite3.linux.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

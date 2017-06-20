@@ -8,10 +8,9 @@ namespace shop
 {
     public class Order
     {
-        public int Price;
-
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
-        public string Name { get; set; }
+        public int Price { get; set; }
+        public string Number { get; set; }
     }
 }

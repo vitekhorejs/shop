@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
+using SQLite;
 
 namespace shop
 {
     public class CartItem
     {
-        public int Cart_Id;
-        public int Item_Id;
+        public string Mail { get; set; }
+        public int Item_Id { get; set; }
     }
 }

@@ -23,6 +23,7 @@ namespace shop
         public MainWindow()
         {
             InitializeComponent();
+            Logged.logged = false;
             MainPage MainPage = new MainPage();
             frame.NavigationService.Navigate(MainPage);
         }

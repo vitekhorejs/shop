@@ -3,14 +3,14 @@
   <Class Name="shop.User">
     <Position X="0.5" Y="4" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAECIAAAAAAAAAAAAAAAAAQABAAAAAACAAAAAQAAAAA=</HashCode>
+      <HashCode>AAACIAAAQAAAAAAAAAAAAAQABAAAAAACAAAAAQAAAAA=</HashCode>
       <FileName>User.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="shop.Item">
     <Position X="4" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAAQAgAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAACAAAAAQAgAAAAAAEAAAQAAAAAAAQAAAAAAAAAAAA=</HashCode>
       <FileName>Item.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -24,22 +24,15 @@
   <Class Name="shop.Category">
     <Position X="4" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAACAAAAAAAAAAAAAAEAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Category.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="shop.Order">
     <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAAQAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAACAAAAAQAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Order.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="shop.CartItem">
-    <Position X="5.75" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAA=</HashCode>
-      <FileName>CasrtInstructor.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="shop.OrderItem">
@@ -54,6 +47,13 @@
     <TypeIdentifier>
       <HashCode>ACAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>UserOrder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="shop.CartItem">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAIAAA=</HashCode>
+      <FileName>CartItem.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

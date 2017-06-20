@@ -18,58 +18,55 @@
         </Grid.ColumnDefinitions>
         <!-- https://marvelapp.com/project/1910449/    https://projects.invisionapp.com/d/signup   https://wpftutorial.net/WrapPanel.html   https://wpf.2000things.com/2014/02/25/1016-displaying-a-collection-of-items-in-a-wrappanel/   http://stackoverflow.com/questions/17979106/can-use-a-wrappanel-with-datatemplate-for-horizontal-alignment-of-items-in-a-lis -->
         <Rectangle Fill="#FF31648F" IsHitTestVisible="False" Grid.Column="0" Grid.Row="0"/>
-        <!-- <Label Grid.Column="0" Grid.Row="0" Content="Přihlásit" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,65,0"></Label>-->
-        <Grid x:Name="LoginPanel" Margin="472,0,0,0">
-            <Button Grid.Column="0" Grid.Row="0" Content="Přihlásit" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,70,0" Padding="5,5,5,5" Background="Transparent" BorderThickness="0" ></Button>
-        <Button Grid.Column="0" Grid.Row="0" Content="Registrovat" Click="Register_Button" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,0,0" Padding="5,5,5,5" Background="Transparent" BorderThickness="0" ></Button>
+        
+        <Grid x:Name="LoginPanel" Margin="472,0,0,0" Visibility="Hidden">
+            <TextBlock Grid.Column="0" Grid.Row="0"  HorizontalAlignment="Right" VerticalAlignment="Bottom" Padding="5,5,5,5">
+                <Hyperlink NavigateUri="LoginPage.xaml"   Foreground="#000000" TextDecorations="None" >Přihlásit </Hyperlink>
+                <Label></Label>
+                <Hyperlink NavigateUri="RegisterPage.xaml"   Foreground="#000000" TextDecorations="None"  >Registrovat </Hyperlink>
+            </TextBlock>
         </Grid>
-
-        <Grid x:Name="UserPanel" Margin="472,0,0,0" Visibility="Hidden">
-            <Label x:Name="USER" Grid.Column="0" Grid.Row="0" Content=""  HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,65,0"></Label>
+        
+        <Grid x:Name="UserPanel" Margin="472,0,0,0" Visibility="Visible">
+            <Label x:Name="USER" Grid.Column="0" Grid.Row="0" MouseLeftButtonUp="User_Clicked" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,100,0"></Label>
+            <TextBlock Grid.Column="0" Grid.Row="0"  HorizontalAlignment="Right" VerticalAlignment="Bottom" Padding="5,5,5,5">
+                <Hyperlink NavigateUri="CartPage.xaml"  Foreground="#000000" TextDecorations="None" >Košík</Hyperlink>
+                <Label></Label>
+                <Hyperlink Click="Logout_Click"  Foreground="#000000" TextDecorations="None" > Odhlásit </Hyperlink>
+                
+            </TextBlock>
         </Grid>
 
         <TextBlock Grid.Column="0" Grid.Row="0"  HorizontalAlignment="Left" VerticalAlignment="Center"   Margin="25,0,0,0">
             <Hyperlink NavigateUri="MainPage.xaml" FontSize="22" FontWeight="Bold" Background="#00000000" Foreground="#FFDEDEDE" TextDecorations="None" >Superkomp.cz </Hyperlink>
         </TextBlock>
-        <!--<StackPanel Grid.Column="0" Grid.Row="1">
-            <TextBox Text="Hledat..."></TextBox>
-            <WrapPanel >
-                
-                <StackPanel>
-                    <Image Source="snapcode.png" Width="50"></Image>
-                </StackPanel>
-            </WrapPanel>
 
-        </StackPanel>-->
         
-        
-        
-        <!--<ListBox Name="Horizontal" ItemsSource="{Binding Solution}" Grid.Column="0" Grid.Row="1" Background="#FFD8D8D8">
-            <ListBox.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <WrapPanel Orientation="Horizontal"/>
-                </ItemsPanelTemplate>
-            </ListBox.ItemsPanel>
+            <Label Content="Kategorie" FontSize="30"  Margin="20,-5,0,0" Grid.Column="0" Grid.Row="1"></Label>
+        <Label x:Name="Info" Content="*Pro možnost nákupu se nejdříve přihlašte. Bez příhlášení je dostupné pouze prohlížení" FontSize="9"  Margin="20,-5,0,0" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Bottom"></Label>
+        <ListBox Name="ic"  Margin="20,45,20,20" Grid.Column="0" Grid.Row="1" ScrollViewer.HorizontalScrollBarVisibility="Disabled" >
             <ListBox.ItemTemplate>
-                <DataTemplate>
-                    
-                    <Image Source="snapcode.png" Width="50"></Image>
-                  
+                <DataTemplate >
+                    <Grid Margin="5" Background="#FFBBCFE2" MouseLeftButtonUp="Item_Clicked">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="150" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="130" />
+                                <RowDefinition Height="50" />
+                            </Grid.RowDefinitions>
+
+                            <Image Grid.Column="0" Margin="0,10,0,0" Grid.Row="0" Source="{Binding ImageSource}" Height="120"/>
+                            <Label Grid.Column="0" Grid.Row="1" Content="{Binding Name}" FontSize="25" HorizontalAlignment="Center" />
+
+                        </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
-        </ListBox>-->
-
-        <ItemsControl ItemsSource="{Binding ActorList}" Margin="20" Grid.Column="0" Grid.Row="1">
-            <ItemsControl.ItemTemplate>
-                <DataTemplate>
-                    <Image Source="{Binding Image}" Height="100"/>
-                </DataTemplate>
-            </ItemsControl.ItemTemplate>
-            <ItemsControl.ItemsPanel>
+            <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <WrapPanel/>
+                    <WrapPanel IsItemsHost="True"/>
                 </ItemsPanelTemplate>
-            </ItemsControl.ItemsPanel>
-        </ItemsControl>
+            </ListBox.ItemsPanel>
+        </ListBox>
     </Grid>
 </Page>

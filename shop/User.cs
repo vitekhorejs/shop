@@ -14,9 +14,9 @@ namespace shop
         public int Id { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
-        public string Password { get; set; }
+        public byte[] Password { get; set; }
         public string Mail { get; set; }
-        public List<Order> Orders { get; set; }
-        public object salt { get; set; }
+        //public List<Order> Orders { get; set; }
+        public byte[] salt { get; set; }
     }
 }
