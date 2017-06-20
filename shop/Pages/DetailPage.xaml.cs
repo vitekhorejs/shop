@@ -98,8 +98,8 @@ namespace shop
         private void BuyItem(object sender, RoutedEventArgs e)
         {
             CartItem cartitem = new CartItem();
-            cartitem.Item_Id = item.Id;
-            cartitem.Mail = Logged.logged_user.Mail;
+            cartitem.ID_Item = item.Id;
+            cartitem.ID_Cart = Logged.logged_user.Id;
             Database.SaveItemAsync(cartitem);
         }
 

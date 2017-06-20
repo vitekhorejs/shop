@@ -87,9 +87,9 @@ namespace shop
             return database.Table<Item>().Where(i => i.Id == Id).FirstOrDefaultAsync();
         }
 
-        public Task<List<CartItem>> GetItemsToCartByMail(string Mail)
+        /*public Task<List<CartItem>> GetItemsToCartByMail(string Mail)
         {
             return database.Table<CartItem>().Where(i => i.Mail == Mail).ToListAsync();
-        }
+        }*/
     }
 }

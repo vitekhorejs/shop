@@ -43,14 +43,14 @@ namespace shop
 
         private void ItemsToListView()
         {
-            var itemsFromDb = Database.GetItemsToCartByMail(Logged.logged_user.Mail).Result;
+            //var itemsFromDb = Database.GetItemsToCartByMail(Logged.logged_user.Mail).Result;
             /*itemsFromDb.
             List<Item> itemy = new List<Item>(); 
             foreach (int cislo in itemsFromDb)
             {
                 Database.GetItemsById()
             }*/
-            listview.ItemsSource = itemsFromDb;
+            //listview.ItemsSource = itemsFromDb;
         }
 
             private void Logout_Click(object sender, RoutedEventArgs e)

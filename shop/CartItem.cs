@@ -9,7 +9,9 @@ namespace shop
 {
     public class CartItem
     {
-        public string Mail { get; set; }
-        public int Item_Id { get; set; }
+        [PrimaryKey, AutoIncrement]
+        public int Id { get; set; }
+        public int ID_Cart { get; set; }
+        public int ID_Item { get; set; }
     }
 }
