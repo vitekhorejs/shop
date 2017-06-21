@@ -73,6 +73,7 @@ namespace shop
             private void Logout_Click(object sender, RoutedEventArgs e)
         {
             Logged.logged = false;
+            //https://www.svetandroida.cz/5-google-now-prikazu-201612/
             Logged.logged_user = null;
             this.NavigationService.Navigate(new MainPage());
         }
