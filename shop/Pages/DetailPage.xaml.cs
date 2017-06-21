@@ -102,6 +102,10 @@ namespace shop
             cartitem.ID_Cart = Logged.logged_user.ID_Cart;
             Database.SaveItemAsync(cartitem);
         }
+        private void User_Clicked(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new CartPage());
+        }
 
         private void Register_Button(object sender, RoutedEventArgs e)
         {

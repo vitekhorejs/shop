@@ -15,5 +15,11 @@ namespace shop
         public string Description { get; set; }
         public int Category_Id { get; set; }
         public string ImageSource { get; set; }
+
+        /*public override string ToString()
+        {
+            return Name+" "+;
+        }*/
     }
+
 }

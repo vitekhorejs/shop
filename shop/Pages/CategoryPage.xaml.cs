@@ -90,6 +90,10 @@ namespace shop
             this.NavigationService.Navigate(new MainPage());
         }
 
+        private void User_Clicked(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new CartPage());
+        }
         private void Item_Clicked(object sender, RoutedEventArgs e)
         {
 

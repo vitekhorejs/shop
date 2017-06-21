@@ -40,22 +40,34 @@ namespace shop
                 return _database;
             }
         }
+        private void Back_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.NavigationService.CanGoBack)
+            {
+                this.NavigationService.GoBack();
+            }
+        }
 
+        private void User_Clicked(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new CartPage());
+        }
         private void ItemsToListView()
         {
             var itemsFromDb = Database.GetItemsToCartById_Cart(Logged.logged_user.ID_Cart).Result;
 
-
-            //var itemsFromDb = Database.GetItemsToCartByMail(Logged.logged_user.Mail).Result;
-            //itemsFromDb.
             List<Item> itemy = new List<Item>();
+            int AllPrice = 0;
+            int x = 0;
             foreach (CartItem catitem in itemsFromDb)
             {
-                var vysledkyy = Database.GetItemByCard_ID(Logged.logged_user.ID_Cart).Result;
+                var vysledkyy = Database.GetItemById(itemsFromDb[x].ID_Item).Result;
+                x++;
+                AllPrice += vysledkyy.Price;
                 itemy.Add(vysledkyy);
             }
             listview.ItemsSource = itemy;
-            //listview.ItemsSource = itemsFromDb;
+            Cena.Content = AllPrice;
         }
 
             private void Logout_Click(object sender, RoutedEventArgs e)

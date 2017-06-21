@@ -26,27 +26,41 @@
         </Grid>
 
         <Grid x:Name="UserPanel" Margin="472,0,0,0" Visibility="Visible">
-            <Label x:Name="USER" Grid.Column="0" Grid.Row="0" Content=""  HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,55,0"></Label>
+            <Label x:Name="USER" Grid.Column="0" Grid.Row="0" MouseLeftButtonUp="User_Clicked" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,100,0"></Label>
             <TextBlock Grid.Column="0" Grid.Row="0"  HorizontalAlignment="Right" VerticalAlignment="Bottom" Padding="5,5,5,5">
-                <Hyperlink Click="Logout_Click"  Foreground="#000000" TextDecorations="None" >Odhlásit </Hyperlink>
+                <Hyperlink NavigateUri="CartPage.xaml"  Foreground="#000000" TextDecorations="None" >Košík</Hyperlink>
+                <Label></Label>
+                <Hyperlink Click="Logout_Click"  Foreground="#000000" TextDecorations="None" > Odhlásit </Hyperlink>
             </TextBlock>
         </Grid>
         <TextBlock Grid.Column="0" Grid.Row="0"  HorizontalAlignment="Left" VerticalAlignment="Center"   Margin="25,0,0,0">
             <Hyperlink NavigateUri="MainPage.xaml" FontSize="22" FontWeight="Bold" Background="#00000000" Foreground="#FFDEDEDE" TextDecorations="None" >Superkomp.cz </Hyperlink>
         </TextBlock>
-        
-        <StackPanel Grid.Column="0" Grid.Row="1" Margin="0" MaxWidth="600">
-            <ListView Name="listview" Height="100">
-                
+        <Button Grid.Column="0" Grid.Row="1" Content="Zpět" Width="35" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,10,0,0" Click="Back_Click"></Button>
+        <StackPanel Grid.Column="0" Grid.Row="1" Margin="0,40,0,0" MaxWidth="600" >
+            <ListView Name="listview" Height="200">
+                <ListView.ItemTemplate>
+                    <DataTemplate >
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"></ColumnDefinition>
+                                <ColumnDefinition Width="auto"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="30"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Label Grid.Column="0" Grid.Row="0" Content="{Binding Name}"/>
+                            <Label Grid.Column="1" Grid.Row="0" HorizontalAlignment="Right" Content="{Binding Price}"/>
+                            
+                        </Grid>
+                        
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
             </ListView>
-            <Label Content="Produkt název" FontWeight="Bold" FontSize="14"></Label>
-            <Label Content="cena"  FontSize="14" HorizontalAlignment="Right" Margin="0,-29,0,0"></Label>
-            <Label Content="Produkt název" FontWeight="Bold" FontSize="14"></Label>
-            <Label Content="cena"  FontSize="14" HorizontalAlignment="Right" Margin="0,-29,0,0"></Label>
-            <Label Content="Produkt název" FontWeight="Bold" FontSize="14"></Label>
-            <Label Content="cena"  FontSize="14" HorizontalAlignment="Right" Margin="0,-29,0,0"></Label>
+
             <Label Content="Celkem" FontWeight="Bold" FontSize="14" Foreground="#FF3362A4" Margin="0,10,0,0"></Label>
-            <Label Content="cena"  FontSize="14" HorizontalAlignment="Right" Margin="0,-29,0,0" FontWeight="Bold"></Label>
+            <Label Content="" x:Name="Cena"  FontSize="14" HorizontalAlignment="Right" Margin="0,-29,0,0" FontWeight="Bold"></Label>
 
             <Button Content="Objednat" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,5,0,0" FontWeight="Bold" FontSize="14" MinWidth="59" Width="85" Height="25"></Button>
             <Label Content="Zpět k nákupu" Foreground="#FF3362A4" FontWeight="Bold" HorizontalContentAlignment="Right"></Label>
